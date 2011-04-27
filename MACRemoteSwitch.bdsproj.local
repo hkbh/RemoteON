@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2011.04.21 16:09:25.732.pas,C:\Documents\Borland Studio Projects\Unit4.pas=C:\Documents\Dropbox\Projects\Исходники\Включение\uMain.pas</Transaction>
+    <Transaction>2011.04.21 16:09:25.732.dfm,C:\Documents\Borland Studio Projects\Unit4.dfm=C:\Documents\Dropbox\Projects\Исходники\Включение\uMain.dfm</Transaction>
+    <Transaction>2011.04.21 16:09:43.735.bdsproj,C:\Documents\Borland Studio Projects\Project5.bdsproj=C:\Documents\Dropbox\Projects\Исходники\Включение\MACRemoteSwitch.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>
