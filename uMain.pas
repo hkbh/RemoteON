@@ -15,6 +15,7 @@ type
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
     DataSource1: TDataSource;
+    ZQuery2: TZQuery;
     procedure DBAdvSmoothListBox1ItemButtonClick(Sender: TObject;
       itemindex: Integer);
     procedure DataSource1DataChange(Sender: TObject; Field: TField);
