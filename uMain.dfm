@@ -34,7 +34,6 @@ object Form4: TForm4
       item
         Caption = 'Item 0'
         Checked = True
-        Hint = 'polz_171'
         GraphicRightType = gtSmoothButton
         GraphicRightShow = gsEnabled
         GraphicRightWidth = 70
@@ -62,7 +61,6 @@ object Form4: TForm4
       item
         Caption = 'Item 1'
         Checked = True
-        Hint = 'polz_170'
         GraphicRightType = gtSmoothButton
         GraphicRightShow = gsEnabled
         GraphicRightWidth = 70
