@@ -15,6 +15,9 @@ type
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
     DataSource1: TDataSource;
+    ZQuery2: TZQuery;
+    procedure DBAdvSmoothListBox1ItemButtonClick(Sender: TObject;
+      itemindex: Integer);
     procedure DataSource1DataChange(Sender: TObject; Field: TField);
   private
     { Private declarations }
@@ -36,4 +39,10 @@ begin
     DataSource1.DataSet.FieldByName('mac').AsString;
 end;
 
-end.
+procedure TForm4.DBAdvSmoothListBox1ItemButtonClick(Sender: TObject;
+  itemindex: Integer);
+begin
+  // ShowMessage(inttostr(itemindex));
+end;
+
+end.          

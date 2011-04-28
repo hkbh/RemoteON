@@ -11,6 +11,7 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object DBAdvSmoothListBox1: TDBAdvSmoothListBox
@@ -29,7 +30,61 @@ object Form4: TForm4
     Fill.Rounding = 0
     Fill.ShadowColor = clNone
     Fill.ShadowOffset = 0
-    Items = <>
+    Items = <
+      item
+        Caption = 'Item 0'
+        Checked = True
+        GraphicRightType = gtSmoothButton
+        GraphicRightShow = gsEnabled
+        GraphicRightWidth = 70
+        GraphicRightHeight = 32
+        CaptionFont.Charset = DEFAULT_CHARSET
+        CaptionFont.Color = clWindowText
+        CaptionFont.Height = -11
+        CaptionFont.Name = 'Tahoma'
+        CaptionFont.Style = []
+        InfoFont.Charset = DEFAULT_CHARSET
+        InfoFont.Color = clWindowText
+        InfoFont.Height = -11
+        InfoFont.Name = 'Tahoma'
+        InfoFont.Style = []
+        NotesFont.Charset = DEFAULT_CHARSET
+        NotesFont.Color = clWindowText
+        NotesFont.Height = -11
+        NotesFont.Name = 'Tahoma'
+        NotesFont.Style = []
+        ProgressMaximum = 100.000000000000000000
+        ButtonColor = 718166
+        ButtonBevel = False
+        ButtonCaption = #1042#1082#1083#1102#1095#1080#1090#1100
+      end
+      item
+        Caption = 'Item 1'
+        Checked = True
+        GraphicRightType = gtSmoothButton
+        GraphicRightShow = gsEnabled
+        GraphicRightWidth = 70
+        GraphicRightHeight = 32
+        CaptionFont.Charset = DEFAULT_CHARSET
+        CaptionFont.Color = clWindowText
+        CaptionFont.Height = -11
+        CaptionFont.Name = 'Tahoma'
+        CaptionFont.Style = []
+        InfoFont.Charset = DEFAULT_CHARSET
+        InfoFont.Color = clWindowText
+        InfoFont.Height = -11
+        InfoFont.Name = 'Tahoma'
+        InfoFont.Style = []
+        NotesFont.Charset = DEFAULT_CHARSET
+        NotesFont.Color = clWindowText
+        NotesFont.Height = -11
+        NotesFont.Name = 'Tahoma'
+        NotesFont.Style = []
+        ProgressMaximum = 100.000000000000000000
+        ButtonColor = 718166
+        ButtonBevel = False
+        ButtonCaption = #1042#1082#1083#1102#1095#1080#1090#1100
+      end>
     ItemAppearance.Fill.Color = clGray
     ItemAppearance.Fill.ColorTo = clWhite
     ItemAppearance.Fill.ColorMirror = clNone
@@ -39,7 +94,6 @@ object Form4: TForm4
     ItemAppearance.Fill.OpacityTo = 117
     ItemAppearance.Fill.BorderColor = 3355443
     ItemAppearance.Fill.Rounding = 0
-    ItemAppearance.Fill.RoundingType = rtTop
     ItemAppearance.Fill.ShadowOffset = 0
     ItemAppearance.FillSelected.Color = 11196927
     ItemAppearance.FillSelected.ColorTo = 7257087
@@ -107,7 +161,7 @@ object Form4: TForm4
     Sections.Font.Name = 'Tahoma'
     Sections.Font.Style = []
     Sections.BorderColor = clBlack
-    SelectedItemIndex = -1
+    SelectedItemIndex = 0
     Header.Fill.Color = 3355443
     Header.Fill.ColorMirror = clNone
     Header.Fill.ColorMirrorTo = clNone
@@ -136,15 +190,19 @@ object Form4: TForm4
     Footer.Fill.BorderColor = 3355443
     Footer.Fill.Rounding = 0
     Footer.Fill.ShadowOffset = 0
-    Footer.Caption = 'Footer'
+    Footer.Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
     Footer.CaptionURLColor = clWhite
     Footer.Font.Charset = DEFAULT_CHARSET
     Footer.Font.Color = clWhite
     Footer.Font.Height = -13
     Footer.Font.Name = 'Tahoma'
     Footer.Font.Style = []
+    OnItemButtonClick = DBAdvSmoothListBox1ItemButtonClick
     DefaultItem.Caption = 'Item 0'
     DefaultItem.GraphicRightType = gtSmoothButton
+    DefaultItem.GraphicRightShow = gsEnabled
+    DefaultItem.GraphicRightWidth = 70
+    DefaultItem.GraphicRightHeight = 32
     DefaultItem.CaptionFont.Charset = DEFAULT_CHARSET
     DefaultItem.CaptionFont.Color = clWindowText
     DefaultItem.CaptionFont.Height = -11
@@ -161,20 +219,19 @@ object Form4: TForm4
     DefaultItem.NotesFont.Name = 'Tahoma'
     DefaultItem.NotesFont.Style = []
     DefaultItem.ProgressMaximum = 100.000000000000000000
+    DefaultItem.ButtonColor = 718166
+    DefaultItem.ButtonBevel = False
+    DefaultItem.ButtonCaption = #1042#1082#1083#1102#1095#1080#1090#1100
     SelectionMode = sPersistSelection
     Categories = <>
     Align = alClient
     TabOrder = 0
     Parent = Owner
     DataBinding.CaptionField = 'alias'
+    DataBinding.CheckedField = 'active'
     DataBinding.NotesField = 'mac'
     DataBinding.InfoField = 'hostname'
-    DataBinding.GraphicRightField = 'id'
     DataSource = DataSource1
-    ExplicitLeft = 8
-    ExplicitTop = 24
-    ExplicitWidth = 209
-    ExplicitHeight = 241
   end
   object dxSkinController1: TdxSkinController
     SkinName = 'Office2010Black'
@@ -183,9 +240,10 @@ object Form4: TForm4
   end
   object ZConnection1: TZConnection
     Protocol = 'sqlite-3'
-    Database = 'C:\Documents\Dropbox\Projects\'#1048#1089#1093#1086#1076#1085#1080#1082#1080'\'#1042#1082#1083#1102#1095#1077#1085#1080#1077'\settings.db3'
+    Database = 'settings.db3'
+    TransactIsolationLevel = tiReadCommitted
     Connected = True
-    DesignConnection = True
+    SQLHourGlass = True
     Left = 160
     Top = 152
   end
@@ -203,5 +261,13 @@ object Form4: TForm4
     OnDataChange = DataSource1DataChange
     Left = 40
     Top = 192
+  end
+  object ZQuery2: TZQuery
+    Connection = ZConnection1
+    SQL.Strings = (
+      'select * from settings;')
+    Params = <>
+    Left = 160
+    Top = 96
   end
 end
