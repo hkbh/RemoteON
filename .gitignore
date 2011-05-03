@@ -1,0 +1,8 @@
+*.dcu
+~*~
+*.local
+*.identcache
+*.skincfg
+
+*.patch
+*.diff
