@@ -12,6 +12,7 @@ object Form4: TForm4
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object DBAdvSmoothListBox1: TDBAdvSmoothListBox
@@ -53,6 +54,7 @@ object Form4: TForm4
         NotesFont.Height = -11
         NotesFont.Name = 'Tahoma'
         NotesFont.Style = []
+        Selected = True
         ProgressMaximum = 100.000000000000000000
         ButtonColor = 718166
         ButtonBevel = False
@@ -242,14 +244,12 @@ object Form4: TForm4
     Protocol = 'sqlite-3'
     Database = 'settings.db3'
     TransactIsolationLevel = tiReadCommitted
-    Connected = True
     SQLHourGlass = True
     Left = 160
     Top = 152
   end
   object ZQuery1: TZQuery
     Connection = ZConnection1
-    Active = True
     SQL.Strings = (
       'select * from hosts;')
     Params = <>

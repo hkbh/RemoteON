@@ -16,6 +16,7 @@ type
     ZQuery1: TZQuery;
     DataSource1: TDataSource;
     ZQuery2: TZQuery;
+    procedure FormShow(Sender: TObject);
     procedure DBAdvSmoothListBox1ItemButtonClick(Sender: TObject;
       itemindex: Integer);
     procedure DataSource1DataChange(Sender: TObject; Field: TField);
@@ -45,4 +46,17 @@ begin
   // ShowMessage(inttostr(itemindex));
 end;
 
-end.          
+procedure TForm4.FormShow(Sender: TObject);
+begin
+  if FileExists(ExtractFilePath(ParamStr(0)) + 'settings.db3') then  
+  try
+    ZConnection1.Database := ExtractFilePath(ParamStr(0)) + 'settings.db3';
+    ZConnection1.Connect;
+    ZQuery1.Open;
+    ZQuery2.Open;
+  except on E: exception do
+    ShowMessage(E.Message);
+  end;
+end;
+
+end.
