@@ -43,7 +43,7 @@ end;
 procedure TForm4.DBAdvSmoothListBox1ItemButtonClick(Sender: TObject;
   itemindex: Integer);
 begin
-  // ShowMessage(inttostr(itemindex));
+  ShowMessage(inttostr(itemindex));
 end;
 
 procedure TForm4.FormShow(Sender: TObject);
