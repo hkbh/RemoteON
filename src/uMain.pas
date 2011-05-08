@@ -4,18 +4,23 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, AdvSmoothListBox, DBAdvSmoothListBox, dxRibbonForm, dxSkinsCore,
-  dxSkinOffice2010Black, cxLookAndFeels, dxSkinsForm, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset, ZConnection;
+  Dialogs, AdvSmoothListBox, DBAdvSmoothListBox, DB, ZAbstractRODataset,
+  ZAbstractDataset, ZDataset, ZConnection, AdvOfficePager, AdvPageControl,
+  ComCtrls, AdvAppStyler, ShellAnimations, IdBaseComponent, IdComponent,
+  IdUDPBase, IdUDPClient;
 
 type
-  TForm4 = class(TdxRibbonForm)
-    DBAdvSmoothListBox1: TDBAdvSmoothListBox;
-    dxSkinController1: TdxSkinController;
+  TForm4 = class(TForm)
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
     DataSource1: TDataSource;
     ZQuery2: TZQuery;
+    AdvPageControl1: TAdvPageControl;
+    AdvTabSheet1: TAdvTabSheet;
+    AdvTabSheet2: TAdvTabSheet;
+    DBAdvSmoothListBox1: TDBAdvSmoothListBox;
+    AdvFormStyler1: TAdvFormStyler;
+    ShellResources1: TShellResources;
     procedure FormShow(Sender: TObject);
     procedure DBAdvSmoothListBox1ItemButtonClick(Sender: TObject;
       itemindex: Integer);
@@ -33,6 +38,40 @@ implementation
 
 {$R *.dfm}
 
+function HexStringToBinString(const HexStr: string): string;
+var
+i, l: integer;
+begin
+Result := '';
+l := length(HexStr);
+l := l div 2;
+SetLength(Result, l);
+for i := 1 to l do
+ if HexToBin(PChar(Copy(HexStr, (i - 1) * 2 + 1, 2)), PChar(@Result[i]), 1) = 0 then
+   raise Exception.Create('Invalid hex value');
+end;
+
+procedure SendMagicPacket(MACAddress: string);
+var
+s, packet: string;
+i: integer;
+begin
+if Length(MACAddress) <> 12 then
+ raise Exception.CreateFmt('Некорректный МАС адрес: %s', [MACAddress]);
+packet := HexStringToBinString('FFFFFFFFFFFF');
+s := HexStringToBinString(MACAddress);
+for i := 1 to 16 do
+ packet := packet + s;
+with TIdUDPClient.Create(nil) do
+ try
+  Active := true;
+  BroadcastEnabled := true;
+  Broadcast(packet, 9);
+ finally
+  Free;
+ end;
+end;
+
 procedure TForm4.DataSource1DataChange(Sender: TObject; Field: TField);
 begin
   if DataSource1.DataSet.Active then  
@@ -43,7 +82,8 @@ end;
 procedure TForm4.DBAdvSmoothListBox1ItemButtonClick(Sender: TObject;
   itemindex: Integer);
 begin
-  ShowMessage(inttostr(itemindex));
+  //ShowMessage(DataSource1.DataSet.FieldByName('mac').AsString);
+  SendMagicPacket(DataSource1.DataSet.FieldByName('mac').AsString);
 end;
 
 procedure TForm4.FormShow(Sender: TObject);
