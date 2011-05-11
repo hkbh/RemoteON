@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, AdvSmoothListBox, DBAdvSmoothListBox, DB, ZAbstractRODataset,
   ZAbstractDataset, ZDataset, ZConnection, AdvOfficePager, AdvPageControl,
-  ComCtrls, AdvAppStyler, ShellAnimations, IdBaseComponent, IdComponent,
+  ComCtrls, AdvAppStyler, IdBaseComponent, IdComponent,
   IdUDPBase, IdUDPClient;
 
 type
@@ -20,10 +20,9 @@ type
     AdvTabSheet2: TAdvTabSheet;
     DBAdvSmoothListBox1: TDBAdvSmoothListBox;
     AdvFormStyler1: TAdvFormStyler;
-    ShellResources1: TShellResources;
-    procedure FormShow(Sender: TObject);
-    procedure DBAdvSmoothListBox1ItemButtonClick(Sender: TObject;
+    procedure DBAdvSmoothListBox1ItemDblClick(Sender: TObject;
       itemindex: Integer);
+    procedure FormShow(Sender: TObject);
     procedure DataSource1DataChange(Sender: TObject; Field: TField);
   private
     { Private declarations }
@@ -79,7 +78,7 @@ begin
     DataSource1.DataSet.FieldByName('mac').AsString;
 end;
 
-procedure TForm4.DBAdvSmoothListBox1ItemButtonClick(Sender: TObject;
+procedure TForm4.DBAdvSmoothListBox1ItemDblClick(Sender: TObject;
   itemindex: Integer);
 begin
   //ShowMessage(DataSource1.DataSet.FieldByName('mac').AsString);
