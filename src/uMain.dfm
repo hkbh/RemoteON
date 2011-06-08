@@ -30,7 +30,7 @@ object Form4: TForm4
     TabBackGroundColor = clBtnFace
     TabMargin.RightMargin = 0
     TabOverlap = 0
-    Version = '1.7.1.0'
+    Version = '1.7.0.1'
     TabOrder = 0
     TabStop = False
     object AdvTabSheet1: TAdvTabSheet
@@ -56,7 +56,6 @@ object Form4: TForm4
         Fill.Rounding = 0
         Fill.ShadowColor = clNone
         Fill.ShadowOffset = 0
-        Fill.Glow = gmNone
         Items = <
           item
             Caption = 'Item 0'
@@ -124,7 +123,6 @@ object Form4: TForm4
         ItemAppearance.Fill.BorderColor = clGray
         ItemAppearance.Fill.Rounding = 0
         ItemAppearance.Fill.ShadowOffset = 0
-        ItemAppearance.Fill.Glow = gmNone
         ItemAppearance.FillSelected.Color = clHighlight
         ItemAppearance.FillSelected.ColorTo = clHighlight
         ItemAppearance.FillSelected.ColorMirror = clNone
@@ -133,7 +131,6 @@ object Form4: TForm4
         ItemAppearance.FillSelected.BorderColor = clBlack
         ItemAppearance.FillSelected.Rounding = 0
         ItemAppearance.FillSelected.ShadowOffset = 0
-        ItemAppearance.FillSelected.Glow = gmNone
         ItemAppearance.FillSelected.GlowGradientColor = 8122111
         ItemAppearance.FillDisabled.Color = clWhite
         ItemAppearance.FillDisabled.ColorTo = clWhite
@@ -143,7 +140,6 @@ object Form4: TForm4
         ItemAppearance.FillDisabled.BorderColor = clNone
         ItemAppearance.FillDisabled.Rounding = 0
         ItemAppearance.FillDisabled.ShadowOffset = 0
-        ItemAppearance.FillDisabled.Glow = gmNone
         ItemAppearance.ProgressAppearance.BackGroundFill.Color = clBtnFace
         ItemAppearance.ProgressAppearance.BackGroundFill.ColorTo = clBtnFace
         ItemAppearance.ProgressAppearance.BackGroundFill.ColorMirror = clNone
@@ -151,7 +147,6 @@ object Form4: TForm4
         ItemAppearance.ProgressAppearance.BackGroundFill.BorderColor = clGray
         ItemAppearance.ProgressAppearance.BackGroundFill.Rounding = 0
         ItemAppearance.ProgressAppearance.BackGroundFill.ShadowOffset = 0
-        ItemAppearance.ProgressAppearance.BackGroundFill.Glow = gmNone
         ItemAppearance.ProgressAppearance.ProgressFill.ColorTo = clSilver
         ItemAppearance.ProgressAppearance.ProgressFill.ColorMirror = clNone
         ItemAppearance.ProgressAppearance.ProgressFill.ColorMirrorTo = clNone
@@ -159,7 +154,6 @@ object Form4: TForm4
         ItemAppearance.ProgressAppearance.ProgressFill.BorderColor = clGray
         ItemAppearance.ProgressAppearance.ProgressFill.Rounding = 0
         ItemAppearance.ProgressAppearance.ProgressFill.ShadowOffset = 0
-        ItemAppearance.ProgressAppearance.ProgressFill.Glow = gmNone
         ItemAppearance.ProgressAppearance.Font.Charset = DEFAULT_CHARSET
         ItemAppearance.ProgressAppearance.Font.Color = clWindowText
         ItemAppearance.ProgressAppearance.Font.Height = -11
@@ -176,28 +170,8 @@ object Form4: TForm4
         ItemAppearance.ButtonAppearance.Font.Height = -11
         ItemAppearance.ButtonAppearance.Font.Name = 'Tahoma'
         ItemAppearance.ButtonAppearance.Font.Style = []
-        ItemAppearance.ButtonAppearance.SimpleLayout = True
         ItemAppearance.VerticalSpacing = 2
         ItemAppearance.Height = 50
-        ItemAppearance.InfoFill.ColorMirror = clNone
-        ItemAppearance.InfoFill.ColorMirrorTo = clNone
-        ItemAppearance.InfoFill.BorderColor = clNone
-        ItemAppearance.InfoFill.Rounding = 0
-        ItemAppearance.InfoFill.ShadowOffset = 0
-        ItemAppearance.InfoFill.Glow = gmNone
-        ItemAppearance.InfoFillSelected.ColorMirror = clNone
-        ItemAppearance.InfoFillSelected.ColorMirrorTo = clNone
-        ItemAppearance.InfoFillSelected.BorderColor = clNone
-        ItemAppearance.InfoFillSelected.Rounding = 0
-        ItemAppearance.InfoFillSelected.ShadowOffset = 0
-        ItemAppearance.InfoFillSelected.Glow = gmNone
-        ItemAppearance.InfoFillDisabled.ColorMirror = clNone
-        ItemAppearance.InfoFillDisabled.ColorMirrorTo = clNone
-        ItemAppearance.InfoFillDisabled.BorderColor = clNone
-        ItemAppearance.InfoFillDisabled.Rounding = 0
-        ItemAppearance.InfoFillDisabled.ShadowOffset = 0
-        ItemAppearance.InfoFillDisabled.Glow = gmNone
-        ItemAppearance.DeleteButtonCaption = #1059#1076#1072#1083#1080#1090#1100
         LookupBar.Font.Charset = DEFAULT_CHARSET
         LookupBar.Font.Color = clWindowText
         LookupBar.Font.Height = -11
@@ -224,7 +198,6 @@ object Form4: TForm4
         Header.Fill.BorderColor = clGray
         Header.Fill.Rounding = 0
         Header.Fill.ShadowOffset = 0
-        Header.Fill.Glow = gmNone
         Header.Caption = #1042#1082#1083#1102#1095#1072#1083#1082#1072' '#1087#1086' '#1052#1040#1057' '#1072#1076#1088#1077#1089#1091
         Header.Font.Charset = DEFAULT_CHARSET
         Header.Font.Color = clBlack
@@ -238,7 +211,6 @@ object Form4: TForm4
         Filter.Fill.BorderColor = clGray
         Filter.Fill.Rounding = 0
         Filter.Fill.ShadowOffset = 0
-        Filter.Fill.Glow = gmNone
         Footer.Fill.Color = clBtnFace
         Footer.Fill.ColorTo = clBtnFace
         Footer.Fill.ColorMirror = clNone
@@ -248,18 +220,15 @@ object Form4: TForm4
         Footer.Fill.BorderColor = clGray
         Footer.Fill.Rounding = 0
         Footer.Fill.ShadowOffset = 0
-        Footer.Fill.Glow = gmNone
         Footer.CaptionURLColor = clWhite
         Footer.Font.Charset = DEFAULT_CHARSET
         Footer.Font.Color = clBlack
         Footer.Font.Height = -13
         Footer.Font.Name = 'Tahoma'
         Footer.Font.Style = []
-        OnItemButtonClick = DBAdvSmoothListBox1ItemButtonClick
+        OnItemDblClick = DBAdvSmoothListBox1ItemDblClick
         DefaultItem.Caption = 'Item 0'
-        DefaultItem.GraphicRightType = gtSmoothButton
         DefaultItem.GraphicLeftShow = gsNever
-        DefaultItem.GraphicRightShow = gsSelected
         DefaultItem.GraphicLeftWidth = 70
         DefaultItem.GraphicRightWidth = 40
         DefaultItem.GraphicRightHeight = 40
@@ -337,10 +306,6 @@ object Form4: TForm4
   object AdvFormStyler1: TAdvFormStyler
     Style = tsTerminal
     Left = 152
-    Top = 264
-  end
-  object ShellResources1: TShellResources
-    Left = 216
     Top = 264
   end
 end
